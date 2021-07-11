@@ -1,0 +1,7 @@
+@mixin btn-size($font-size, $height, $padding-x, $btn-radius) {
+  font-size: $font-size;
+  padding: 0 $padding-x;
+  border-radius: $btn-radius;
+  height: $height;
+  line-height: $height;
+}

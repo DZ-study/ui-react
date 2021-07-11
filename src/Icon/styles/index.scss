@@ -1,0 +1,39 @@
+@import '../../styles/index.scss';
+
+$icon-prefix-cls: #{$ui-prefix}-icon;
+
+.#{$icon-prefix-cls} {
+  padding: 5px;
+}
+
+.#{$icon-prefix-cls}-primary {
+  color: $primary;
+}
+
+.#{$icon-prefix-cls}-secondary {
+  color: $secondary;
+}
+
+.#{$icon-prefix-cls}-success {
+  color: $success;
+}
+
+.#{$icon-prefix-cls}-info {
+  color: $info;
+}
+
+.#{$icon-prefix-cls}-warning {
+  color: $warning;
+}
+
+.#{$icon-prefix-cls}-danger {
+  color: $danger;
+}
+
+.#{$icon-prefix-cls}-light {
+  color: $light;
+}
+
+.#{$icon-prefix-cls}-dark {
+  color: $dark;
+}

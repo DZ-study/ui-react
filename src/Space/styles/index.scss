@@ -1,0 +1,55 @@
+@import '../../styles/index.scss';
+
+$space-prefix-cls: #{$ui-prefix}-space;
+
+@mixin spaceSizeH($size) {
+  .#{$space-prefix-cls}-item {
+    & + .#{$space-prefix-cls}-item {
+      margin-left: $size;
+    }
+  }
+}
+
+@mixin spaceSizeV($size) {
+  .#{$space-prefix-cls}-item {
+    & + .#{$space-prefix-cls}-item {
+      margin-top: $size;
+    }
+  }
+}
+
+.#{$space-prefix-cls} {
+  display: flex;
+  padding: 10px;
+  &.#{$space-prefix-cls}-vertical {
+    flex-direction: column;
+    &.#{$space-prefix-cls}-small {
+      @include spaceSizeV($space-small)
+    }
+  
+    &.#{$space-prefix-cls}-middle {
+      @include spaceSizeV($space-middle)
+    }
+  
+    &.#{$space-prefix-cls}-large {
+      @include spaceSizeV($space-large)
+    }
+  }
+
+  &.#{$space-prefix-cls}-horizontal {
+    flex-direction: row;
+    &.#{$space-prefix-cls}-small {
+      @include spaceSizeH($space-small)
+    }
+  
+    &.#{$space-prefix-cls}-middle {
+      @include spaceSizeH($space-middle)
+    }
+  
+    &.#{$space-prefix-cls}-large {
+      @include spaceSizeH($space-large)
+    }
+  }
+
+  
+}

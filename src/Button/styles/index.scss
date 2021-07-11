@@ -1,0 +1,51 @@
+@import '../../styles/index.scss';
+@import './mixin.scss';
+
+$btn-prefix-cls: #{$ui-prefix}-btn;
+
+.#{$btn-prefix-cls} {
+  position: relative;
+  display: inline-block;
+  border: $border-width solid $border-color;
+  padding: 0 $btn-padding-x;
+  border-radius: $border-radius;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  height: $btn-height;
+  line-height: $btn-height;
+  outline: 0;
+  &.disabled {
+    cursor: not-allowed;
+    color: $btn-link-disabled-color;
+    opacity: $btn-disabled-opacity;
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+// TODO: 嵌套写法？
+.#{$btn-prefix-cls}-primary {
+  background-color: $primary;
+  color: #fff;
+}
+
+.#{$btn-prefix-cls}-danger {
+  background-color: $danger;
+  color: #fff;
+}
+
+.#{$btn-prefix-cls}-link {
+  color: $btn-link-color;
+  border: none;
+}
+
+.#{$btn-prefix-cls}-large {
+  @include btn-size($btn-font-size-lg, $btn-height-lg, $btn-padding-x-lg, $btn-border-radius-lg);
+}
+
+.#{$btn-prefix-cls}-small {
+  @include btn-size($btn-font-size-sm, $btn-height-sm, $btn-padding-x-sm, $btn-border-radius-sm);
+}
+

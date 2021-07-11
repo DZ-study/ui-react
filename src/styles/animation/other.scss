@@ -1,0 +1,46 @@
+@import '../default.scss';
+@import '../variable.scss';
+
+@keyframes loadingCircle {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+html {
+  --ui-wave-shadow-color: $primary;
+  --scroll-bar: 0;
+}
+
+
+.#{$ui-prefix}-click-animating-with-extra-node::after,
+.#{$ui-prefix}-click-animating-node {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 $primary;
+  box-shadow: 0 0 0 0 var(--ui-wave-shadow-color);
+  opacity: 0.2;
+  animation: fadeEffect 5s $ease-out-circ, waveEffect 0.4s $ease-out-circ;
+  animation-fill-mode: forwards;
+  background-color: #fff;
+  content: '';
+  pointer-events: none;
+}
+
+@keyframes waveEffect {
+  100% {
+    box-shadow: 0 0 0 $primary;
+    box-shadow: 0 0 0 6px var(--ui-wave-shadow-color);
+  }
+}
+
+@keyframes fadeEffect {
+  100% {
+    opacity: 0;
+  }
+}
